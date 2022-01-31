@@ -1,2 +1,2 @@
 # text-analytics-blueprints
-Blueprints from book by Albrecht, Ramachandran, and Winkler. 
+These are blueprints from book by Albrecht, Ramachandran, and Winkler. 
