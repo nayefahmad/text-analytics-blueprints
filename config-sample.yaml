@@ -1,0 +1,6 @@
+
+# see https://developer.twitter.com/en/portal/apps/16615515/keys
+keys:
+  api_key: key  # update this
+  api_secret_key: secret_key  # update this
+
