@@ -10,6 +10,10 @@ auth = tweepy.AppAuthHandler(app_api_key, app_api_secret_key)
 api = tweepy.API(auth)
 
 print(f"API Host: {api.host}")
+try:
+    api.verify_credentials()
+except tweepy.errors.Forbidden:
+    print("Error during authentication")
 
 # public_tweets = api.home_timeline()
 # for tweet in public_tweets:
