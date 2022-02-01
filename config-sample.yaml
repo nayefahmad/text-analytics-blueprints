@@ -1,5 +1,5 @@
-
-# see https://developer.twitter.com/en/portal/apps/16615515/keys
+# Update values and save this file as `config.yaml`.
+# see https://developer.twitter.com/en/portal/apps/
 keys:
   api_key: key  # update this
   api_secret_key: secret_key  # update this
