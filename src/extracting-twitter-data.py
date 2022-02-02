@@ -1,31 +1,42 @@
+"""
+# Extracting twitter data
+
+Uses package tweepy (v4.5.0).
+
+Note that Twitter API was recently updated, and articles like
+[this one](https://realpython.com/twitter-bot-python-tweepy/)
+are now probably out of date?
+
+References:
+    - https://dev.to/twitterdev/a-comprehensive-guide-for-using-the-twitter-api-v2-using-tweepy-in-python-15d9  # noqa
+
+
+"""
+
 import tweepy
 from src.utils import read_yaml
+import pandas as pd
 
 config = read_yaml(r"./config.yaml")
 
-app_api_key = config["keys"]["api_key"]
-app_api_secret_key = config["keys"]["api_secret_key"]
+bearer_token = config["tokens"]["bearer_token"]
 
-auth = tweepy.AppAuthHandler(app_api_key, app_api_secret_key)
-api = tweepy.API(auth)
+client = tweepy.Client(bearer_token=bearer_token)
 
-print(f"API Host: {api.host}")
-try:
-    api.verify_credentials()
-except tweepy.errors.Forbidden:
-    print("Error during authentication")
+query = "from:baddatasciencer"
 
-# public_tweets = api.home_timeline()
-# for tweet in public_tweets:
-#     print(tweet.text)
+tweets = client.search_recent_tweets(
+    query=query,
+    tweet_fields=["context_annotations", "created_at"],
+    max_results=100,  # noqa
+)
 
-# search_term = 'bayes'
-# tweets = tweepy.Cursor(api.search_30_day(label='tweets', query=search_term))
 
-# retreived_tweets = [tweet.text for tweet in tweets]
-# df = pd.json_normalize(retreived_tweets)
+for tweet in tweets.data:
+    print(tweet.text)
+    if len(tweet.context_annotations) > 0:
+        print(tweet.context_annotations)
 
-# tweets = tw.Cursor(api.search,
-#               q=search_query,
-#               lang="en",
-#               since="2020-09-16").items(50)
+
+df_tweets = pd.DataFrame({"tweet_text": tweets.data})
+# df_tweets.head()  # todo: why StopIteration exception?
