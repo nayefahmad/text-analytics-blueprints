@@ -1,7 +1,7 @@
 # text-analytics-blueprints
 These are blueprints from book by Albrecht, Ramachandran, and Winkler, published by O'Reilly in the year 2020. 
 
-# Repo structure 
+## Repo structure 
 - `src`: contains code files 
 - `.pre-commit-config.yaml`: config for use with `pre-commit`. It specifies what hooks to use. 
   Once this file is created, if you run `pre-commit install`, the pre-commit tool will populate the 
@@ -14,6 +14,5 @@ These are blueprints from book by Albrecht, Ramachandran, and Winkler, published
 - `requirements.txt`: python packages used 
 
 ## Contents
-1. Extracting twitter data:
-    1. See file `src/extracting-twitter-data.py`
-    2. Uses package tweepy. 
+1. Exploratory data analysis of text data 
+1. [Extracting twitter data using Tweepy](https://github.com/nayefahmad/text-analytics-blueprints/blob/main/src/extracting-twitter-data.py)
