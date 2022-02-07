@@ -5,10 +5,13 @@
 # ## Imports
 import pandas as pd
 from pathlib import Path
-from src.utils import get_repo_path
+
+import sys
+
+sys.path.extend(["C:/Nayef/text-analytics-blueprints"])
 
 # ## Loading data
-dir = Path(get_repo_path(), "data")
+dir = Path("C:/Nayef/text-analytics-blueprints/data")
 file = "un-general-debates.csv"
 df_un_debates = pd.read_csv(dir.joinpath(file))
 
