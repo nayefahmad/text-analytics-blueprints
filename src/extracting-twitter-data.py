@@ -14,10 +14,13 @@ References:
 """
 
 import tweepy
-from src.utils import read_yaml
+from utils import read_yaml
 import pandas as pd
+from pathlib import Path
 
-config = read_yaml(r"./config.yaml")
+f = Path(__file__).parents[1].joinpath("config.yaml")
+
+config = read_yaml(f)
 
 bearer_token = config["tokens"]["bearer_token"]
 
