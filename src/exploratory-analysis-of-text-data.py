@@ -7,10 +7,6 @@
 import pandas as pd
 from pathlib import Path
 
-import sys
-
-sys.path.extend(["C:/Nayef/text-analytics-blueprints"])
-
 from IPython.core.interactiveshell import InteractiveShell  # noqa
 
 InteractiveShell.ast_node_interactivity = "all"
