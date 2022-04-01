@@ -13,16 +13,6 @@ These are blueprints from the book by Albrecht, Ramachandran, and Winkler, publi
 - `config-sample.yaml`: sample config file. Update the values and save as `config.yaml`
 - `requirements.txt`: python packages used 
 
-### Other notes 
-- I use `streambook` to convert python files to jupyter notebooks. 
-This is why in many cases you will see several similar files, like below. 
-  The `.ipynb` file is easiest to view in GitHub. 
-  For more on streambook, see [this repo](https://github.com/nayefahmad/streambook/blob/main/README.md). 
-  - example.py 
-  - example.ipynb  
-  - example.notebook.py 
-  - example.streambook.py 
-  
 
 ## Contents
 1. [Exploratory data analysis of text data](https://github.com/nayefahmad/text-analytics-blueprints/blob/main/src/exploratory-analysis-of-text-data.ipynb) 
